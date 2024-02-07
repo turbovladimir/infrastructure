@@ -6,6 +6,8 @@ services:
     restart: always
     ports:
       - '80:80'
+      - '443:443'
     volumes:
       - ./nginx/conf.d:/etc/nginx/conf.d
-      - /vaw/www:/var/www
+      - ./nginx/ssl:/etc/nginx/ssl
+      - /var/www:/var/www
