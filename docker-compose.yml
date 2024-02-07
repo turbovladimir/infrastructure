@@ -1,0 +1,13 @@
+version: '3.5'
+services:
+  nginx:
+    container_name: c-nginx
+    image: nginx:alpine
+    restart: always
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/ssl:/etc/nginx/ssl
+      - /var/www:/var/www
